@@ -77,6 +77,7 @@ def manage_matplotlib_context() -> Any:
         register_matplotlib_converters()
         matplotlib.rcParams.update(customRcParams)
         sns.set_style(style="white")
+        matplotlib.rcParams['font.family'] = ['Yu Gothic', 'sans-serif']   # add Japanese font
         yield
     finally:
         deregister_matplotlib_converters()  # revert to original unit registries
